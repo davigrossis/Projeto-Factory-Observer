@@ -12,13 +12,17 @@ public class Cliente implements Observer {
         this.nome = nome;
     }
 
-    @Override
-    public void update(Observable o, Object arg) {
-        this.ultimaNotificacao = "Cliente " + nome + " recebeu notificação: " + arg;
-        System.out.println(this.ultimaNotificacao);
+    public void criarPedido(Pedido pedido) {
+        pedido.addObserver(this);
     }
 
     public String getUltimaNotificacao() {
         return ultimaNotificacao;
+    }
+
+    @Override
+    public void update(Observable o, Object arg) {
+        this.ultimaNotificacao = "Cliente " + nome + " recebeu notificação: " + arg;
+        System.out.println(this.ultimaNotificacao);
     }
 }

@@ -9,7 +9,7 @@ public class ClienteTest {
     void deveNotificarClienteAceitar() {
         Pedido pedido = new Pedido("Restaurante");
         Cliente cliente = new Cliente("Maria");
-        pedido.addObserver(cliente);
+        cliente.criarPedido(pedido);
         pedido.atualizarStatus("Pedido aceito pelo restaurante");
 
         assertEquals("Cliente Maria recebeu notificação: Restaurante atualizou o status do seu pedido: Pedido aceito pelo restaurante", cliente.getUltimaNotificacao());
@@ -19,7 +19,7 @@ public class ClienteTest {
     void deveNotificarClienteCancelar() {
         Pedido pedido = new Pedido("Farmacia");
         Cliente cliente = new Cliente("Carlos");
-        pedido.addObserver(cliente);
+        cliente.criarPedido(pedido);
         pedido.atualizarStatus("Pedido de remedios cancelado pelo cliente");
 
         assertEquals("Cliente Carlos recebeu notificação: Farmacia atualizou o status do seu pedido: Pedido de remedios cancelado pelo cliente", cliente.getUltimaNotificacao());
@@ -29,7 +29,7 @@ public class ClienteTest {
     void deveNotificarClientePreparar() {
         Pedido pedido = new Pedido("Mercado");
         Cliente cliente = new Cliente("Joana");
-        pedido.addObserver(cliente);
+        cliente.criarPedido(pedido);
         pedido.atualizarStatus("Produtos estão sendo separados");
 
         assertEquals("Cliente Joana recebeu notificação: Mercado atualizou o status do seu pedido: Produtos estão sendo separados", cliente.getUltimaNotificacao());
@@ -39,7 +39,7 @@ public class ClienteTest {
     void deveNotificarClienteEnviar() {
         Pedido pedido = new Pedido("Restaurante");
         Cliente cliente = new Cliente("Bruno");
-        pedido.addObserver(cliente);
+        cliente.criarPedido(pedido);
         pedido.atualizarStatus("Comida saiu para entrega com o entregador");
 
         assertEquals("Cliente Bruno recebeu notificação: Restaurante atualizou o status do seu pedido: Comida saiu para entrega com o entregador", cliente.getUltimaNotificacao());
@@ -60,8 +60,8 @@ public class ClienteTest {
         Cliente cliente1 = new Cliente("João");
         Cliente cliente2 = new Cliente("Ana");
 
-        pedido.addObserver(cliente1);
-        pedido.addObserver(cliente2);
+        cliente1.criarPedido(pedido);
+        cliente2.criarPedido(pedido);
 
         pedido.atualizarStatus("Pedido enviado");
 
@@ -77,8 +77,8 @@ public class ClienteTest {
         Cliente cliente1 = new Cliente("Clara");
         Cliente cliente2 = new Cliente("Lucas");
 
-        pedidoRestaurante.addObserver(cliente1);
-        pedidoFarmacia.addObserver(cliente2);
+        cliente1.criarPedido(pedidoRestaurante);
+        cliente2.criarPedido(pedidoFarmacia);
 
         pedidoRestaurante.atualizarStatus("Pedido em preparo");
         pedidoFarmacia.atualizarStatus("Remédios prontos para entrega");

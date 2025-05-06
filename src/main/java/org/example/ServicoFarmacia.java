@@ -6,10 +6,6 @@ public class ServicoFarmacia implements IServico {
 
     private Pedido pedido = new Pedido("Farmacia");
 
-    public void addObserver(Observer observer) {
-        pedido.addObserver(observer);
-    }
-
     @Override
     public String aceitar() {
         pedido.atualizarStatus("Pedido aceito pela farmacia");

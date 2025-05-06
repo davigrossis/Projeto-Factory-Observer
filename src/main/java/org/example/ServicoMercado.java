@@ -6,10 +6,6 @@ public class ServicoMercado implements IServico {
 
     private Pedido pedido = new Pedido("Mercado");
 
-    public void addObserver(Observer observer) {
-        pedido.addObserver(observer);
-    }
-
     @Override
     public String aceitar() {
         pedido.atualizarStatus("Pedido aceito pelo mercado");
