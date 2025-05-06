@@ -10,7 +10,7 @@ public class PedidoEstadoPreparado extends PedidoEstado{
 
     @Override
     public String getEstado() {
-        return "Preparando";
+        return "Pedido preparando";
     }
 
     @Override

@@ -10,6 +10,6 @@ public class PedidoEstadoCancelado extends PedidoEstado {
 
     @Override
     public String getEstado() {
-        return "Cancelado";
+        return "Pedido cancelado";
     }
 }

@@ -119,4 +119,29 @@ public class PedidoTest {
         pedido.setEstado(PedidoEstadoCancelado.getInstance());
         assertFalse(pedido.cancelar());
     }
+
+
+    //CASO DE TESTE SINGLETON
+
+    @Test
+    public void deveRetornarPedidoAceitando() {
+        assertEquals("Pedido aceito", PedidoEstadoAceito.getInstance().getEstado());
+    }
+
+    @Test
+    public void deveRetornarPedidoPreparado() {
+        assertEquals("Pedido preparando", PedidoEstadoPreparado.getInstance().getEstado());
+    }
+
+    @Test
+    public void deveRetornarPedidoEnviado() {
+        assertEquals("Pedido enviado", PedidoEstadoEnviado.getInstance().getEstado());
+    }
+
+    @Test
+    public void deveRetornarPedidoCancelado() {
+        assertEquals("Pedido cancelado", PedidoEstadoCancelado.getInstance().getEstado());
+    }
+
+
 }

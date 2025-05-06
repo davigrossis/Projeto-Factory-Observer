@@ -10,6 +10,6 @@ public class PedidoEstadoEnviado extends PedidoEstado {
 
     @Override
     public String getEstado() {
-        return "Enviando";
+        return "Pedido enviado";
     }
 }
